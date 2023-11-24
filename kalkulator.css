@@ -1,0 +1,77 @@
+/* Style the body and container */
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the header */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Style the form elements */
+label, input, select, button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    background-color: #f7f7f7;
+}
+
+button {
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Add some spacing for better readability */
+label:first-of-type {
+    margin-top: 10px;
+}
+
+/* Optional: Style the select dropdown arrow */
+select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    pointer-events: none;
+}
+
+/* Optional: Style the input fields for better focus indication */
+input:focus, select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

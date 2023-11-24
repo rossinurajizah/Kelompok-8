@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+    <title>Fungsi Kuadrat   </title>
+    <link rel="stylesheet" href="grafik.css">
+</head>
+<body>
+  <div class="Back">
+    <a style="text-decoration: none " href="menu.html" class="py-2 px-4 bg-blue-600 rounded-md text-white"><button>back</button></a>
+  </div>
+  <div class="flex justify-center items-center w-full min-h-screen h-full">
+    <div class="w-1/2 h-[800px] bg-slate-50 shadow-lg p-4 ">
+      <h1 class="mb-10 text-slate-800 text-3xl">Kalkulator Fungsi Kuadrat</h1>
+      <div class="flex w-72 flex-col gap-6">
+        <div class="relative h-11 w-full min-w-[200px]">
+          <input
+            placeholder="Static"
+            id="a" value="1"
+            class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+          />
+          <label class="after:content[' '] pointer-events-none absolute left-0 -top-2.5 flex h-full w-full select-none text-sm font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-pink-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:after:scale-x-100 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+            Koefisien a:
+          </label>
+        </div>  
+          <div class="relative h-11 w-full min-w-[200px]">
+            <input
+              placeholder="Static"
+              id="b" value="2"
+              class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+            />
+            <label class="after:content[' '] pointer-events-none absolute left-0 -top-2.5 flex h-full w-full select-none text-sm font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-pink-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:after:scale-x-100 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+              Koefisien b:
+            </label>
+          </div>
+            <div class="relative h-11 w-full min-w-[200px]">
+              <input
+                placeholder="Static"
+                id="c" value="3"
+                class="peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+              />
+              <label class="after:content[' '] pointer-events-none absolute left-0 -top-2.5 flex h-full w-full select-none text-sm font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-2.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-pink-500 after:transition-transform after:duration-300 peer-placeholder-shown:leading-tight peer-placeholder-shown:text-blue-gray-500 peer-focus:text-sm peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:after:scale-x-100 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                Koefisien c:
+              </label>
+      
+  </div>
+      </div>
+      
+      <div id="calculator" style="width: 600px; height: 400px;" class="mt-5"></div>
+
+    </div>
+  </div>
+    
+    
+
+    <script src="https://www.desmos.com/api/v1.8/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <script>
+        const calculator = Desmos.Calculator(document.getElementById('calculator'), {
+          expressions: false,
+        });
+    
+        function renderQuadraticEquation() {
+          const a = parseFloat(document.getElementById('a').value);
+          const b = parseFloat(document.getElementById('b').value);
+          const c = parseFloat(document.getElementById('c').value);
+          calculator.setExpression({ id: 'eq1', latex: `y=${a}x^2+${b}x+${c}` });
+        }
+    
+     
+        renderQuadraticEquation();
+    
+        const inputElements = document.querySelectorAll('input');
+        inputElements.forEach((input) => {
+          input.addEventListener('input', renderQuadraticEquation);
+        });
+
+        function tampilkanGrafik() {
+      document.getElementById("menu").style.display = "none";
+      document.getElementById("grafik-container").style.display = "block";
+      document.getElementById("desmos-graph").innerHTML = "<p>Grafik dari API Desmos</p>";
+      }
+
+        function kembaliKeMenu() {
+      document.getElementById("grafik-container").style.display = "none";
+      document.getElementById("menu").style.display = "block";
+      }
+
+      </script>
+
+</body>
+</html>
+
+           

@@ -1,0 +1,46 @@
+.container{
+    width: 1000px;
+    margin: auto;
+}
+.pengertian{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 1000px;
+    height: auto;
+    margin: auto auto auto;
+    text-align: justify;
+    
+}
+
+.rumus_awal{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 1000px;
+    height: auto;
+    margin: auto ;
+    text-align: justify;
+}
+
+.karakteristik{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 1000px;
+    height: auto;
+    margin: auto ;
+    text-align: justify;
+}
+/* Styles for smaller screens */
+@media only screen and (max-width: 600px) {
+    .pengertian, .rumus_awal, .karakteristik {
+        width: 100%;
+    }
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
